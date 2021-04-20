@@ -86,8 +86,9 @@ To constructing a multi-label classification model we exxperienced with several 
 Our base model uses TFIDF together with Logisitic regression and reached an average validation accuracy of 0.7899 with an average f1-score of 0.3584.
 
 #### Final Model
+[Colab Notebook](https://github.com/xuezzou/Rebuild-My-Professor/blob/main/Tags-Prediction/Tag_Classification_with_BiLSTM%2BCNN.ipynb)
 
-We picked self-trained Word2Vec word embedding together with BiLSTM with CNN using binary cross entropy as loss function as our final model. 
+We picked self-trained Word2Vec word embedding together with BiLSTM with CNN using binary cross entropy as loss function as our final model. It reached an average validation accuracy of 0.8275, recall of 0.7702, and an average f1-score of 0.7795.
 
 ## Project: Radar Chart
 
