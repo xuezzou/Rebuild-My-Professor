@@ -4,7 +4,8 @@
 
 Here is the repository for our course project at Vanderbilt: CS 3891 Special Topics (2020 Spring). We applied machine learning techniques in this project and specifically rating tags prediction based on ratemyprofessors.com in this folder.
 
-##Why rating tags prediction?
+## Why rating tags prediction?
+
 **Goal:**
 - Automate the process of assigning tags to reviews based on their content. Eg. Tough grader, Get ready to read, etc
 
@@ -20,10 +21,10 @@ Here is the repository for our course project at Vanderbilt: CS 3891 Special Top
 ---
 
 The project is composed of two parts: word embedding and multi-label classification. 
-##Word Embedding
+## Word Embedding
 
 
-##Multi-label Classification
+## Multi-label Classification
 
 First of all, we need to understand what is multi-label classification. 
 There are three kinds of classification tasks:
@@ -37,14 +38,14 @@ To constructing a multi-label classification model we exxperienced with several 
 - Simple Machine Learning Algorithms: Logistic regression 
 - Deep Learning Methods: LSTM, BiLSTM, CNN
 
-##Model Structures
+## Model Structures
 
-###Base Model
+### Base Model
 [Colab Notebook](https://github.com/xuezzou/Rebuild-My-Professor/blob/main/Tags-Prediction/BaseModel.ipynb)
 
 Our base model uses TFIDF together with Logisitic regression and reached an average validation accuracy of 0.7899 with an average f1-score of 0.3584.
 
 
-###Final Model
+### Final Model
 
 We picked self-trained Word2Vec word embedding together with BiLSTM with CNN using binary cross entropy as loss function as our final model. 
