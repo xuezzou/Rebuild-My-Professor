@@ -61,7 +61,32 @@ We have finish the visualization of all the 20 tags and get a clear distribution
 We also check the number of tags for every comments. Since the maximum number of tags in RateMyProfessor website is three, we can see only three tag numbers in thhis chart. Most comments includes three tags, while some of them includes one or two. The numbers remain a ratio about 1: 2: 7.
 
 3. **Word Embedding**:
-    
+    Here we are using our self trained [word2vec](https://github.com/xuezzou/Rebuild-My-Professor/blob/main/Tags-Prediction/Word_Embeddings.ipynb) model for process the dataset. Basically, Word2Vec represents each distinct word with different vectors. Due to the certain limitation of our dataset, like 'A' means a grade but not a determiner, we decided to train the word2vec model ourselves.
+
+### Multi-label Classification
+
+First of all, we need to understand what is multi-label classification. 
+There are three kinds of classification tasks:
+1. Binary classification: two exclusive classes
+2. Multi-class classification: more than two **exclusive** classes
+3. Multi-label classification: **non-exclusive** classes
+
+Rating tags prediction, in our case, would be a sample of multi-label classfication.
+To constructing a multi-label classification model we exxperienced with several choices:
+
+- Simple Machine Learning Algorithms: Logistic regression 
+- Deep Learning Methods: LSTM, BiLSTM, CNN
+
+### Model Structures
+
+#### Base Model
+[Colab Notebook](https://github.com/xuezzou/Rebuild-My-Professor/blob/main/Tags-Prediction/BaseModel.ipynb)
+
+Our base model uses TFIDF together with Logisitic regression and reached an average validation accuracy of 0.7899 with an average f1-score of 0.3584.
+
+#### Final Model
+
+We picked self-trained Word2Vec word embedding together with BiLSTM with CNN using binary cross entropy as loss function as our final model. 
 
 ## Project: Radar Chart
 
