@@ -42,6 +42,27 @@ Professor ratings are closely related to college student choices. Given the site
 
 ## Project: Tags Prediction
 
+### Methods
+
+1. **Data Prep**:
+    Since we will mainly focused on the review and tags, we seperate these columns from the whole dataset. After we remove all the comments with no tags, we follow the standard preprocessing process:
+    1) Tokenization: splitting every comments into tokens.
+    2) Nomalization: transverting every words/tokens to their original forms
+    3) Removal of stop words: remove all the stop words(words that is too frequently used to be meaningful) from comments
+
+2. **Data Visualization**:
+
+![img](./Tags-Prediction/Tag-Visualization.png)
+
+We have finish the visualization of all the 20 tags and get a clear distribution. We can see that the number of comments for each tags varies a lot, which need to be balanced for a better modeling experience.
+
+![img](./Tags-Prediction/Tag-nums.png)
+
+We also check the number of tags for every comments. Since the maximum number of tags in RateMyProfessor website is three, we can see only three tag numbers in thhis chart. Most comments includes three tags, while some of them includes one or two. The numbers remain a ratio about 1: 2: 7.
+
+3. **Word Embedding**:
+    
+
 ## Project: Radar Chart
 
 ### Methods
