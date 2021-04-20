@@ -61,7 +61,8 @@ We have finish the visualization of all the 20 tags and get a clear distribution
 We also check the number of tags for every comments. Since the maximum number of tags in RateMyProfessor website is three, we can see only three tag numbers in thhis chart. Most comments includes three tags, while some of them includes one or two. The numbers remain a ratio about 1: 2: 7.
 
 3. **Word Embedding**:
-    Here we are using our self trained [word2vec](https://github.com/xuezzou/Rebuild-My-Professor/blob/main/Tags-Prediction/Word_Embeddings.ipynb) model for process the dataset. Basically, Word2Vec represents each distinct word with different vectors. Due to the certain limitation of our dataset, like 'A' means a grade but not a determiner, we decided to train the word2vec model ourselves.
+
+Here we are using our self trained [word2vec](https://github.com/xuezzou/Rebuild-My-Professor/blob/main/Tags-Prediction/Word_Embeddings.ipynb) model for process the dataset. Basically, Word2Vec represents each distinct word with different vectors. Due to the certain limitation of our dataset, like 'A' means a grade but not a determiner, we decided to train the word2vec model ourselves.
 
 ### Multi-label Classification
 
