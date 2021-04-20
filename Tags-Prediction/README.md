@@ -57,5 +57,6 @@ Our base model uses TFIDF together with Logisitic regression and reached an aver
 
 
 ### Final Model
+[Colab Notebook](https://github.com/xuezzou/Rebuild-My-Professor/blob/main/Tags-Prediction/Tag_Classification_with_BiLSTM%2BCNN.ipynb)
 
 We picked self-trained Word2Vec word embedding together with BiLSTM with CNN using binary cross entropy as loss function as our final model. 
