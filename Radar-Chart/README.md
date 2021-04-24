@@ -15,7 +15,6 @@ Here's an illustration regarding how our process works.
 
    <img src="./LDA.png" alt="drawing" width="300"/>
 
-
 3. **Multiclass Classification Model Development**:
    After manually checking the clusters and choosing our topics, we manually label some data within the relevant clusters for training. To build the model, we apply **Bert embedding and a linear regression layer** for output. We also tried **Bert embedding with the LSTM model**.
 
@@ -67,7 +66,7 @@ After deciding the topics, we manually label those clusters to prepare data for 
 
 #### Prevent Overfitting
 
-To prevent Overfitting, we first reduce the network's capacity by removing layers or reducing the number of elements in the hidden layers. We also use Dropout layers, which will randomly remove certain features by setting them to zero. Besides, we apply regularization, which adds a cost to the loss function for large weights.
+To prevent Overfitting, we first **reduce the network's capacity** by removing layers or reducing the number of elements in the hidden layers. We also **use Dropout layers**, randomly removing certain features by setting them to zero. We **apply regularization**, which adds a cost to the loss function for large weights.
 
 #### Metrics & Results
 
@@ -75,23 +74,21 @@ We evaluate both models using the training loss vs validation loss curve and cla
 
 #### Score Calculation & Nomalization
 
-To normalize the score calculation process later in the web server, we use a random sample of professors. We feed the sentences, run the model, and obtain each professors's raw score by averaging every sentence's softmax/probability output. Here is the distribution of each category from our sample data:
+To normalize the score calculation process later in the web server, we first select a **random sample** of professors. We feed the comments, run the model, and obtain each professors' raw score by **averaging every sentence's softmax/probability output**. Here is the distribution of each category from our sample data:
 
 <img src="./distribution.jpg" alt="drawing" width="500"/>
 
-We then normalize the score to represent where it lies on the sample distribution. i.e. 80% means the raw score is better than 80% of that of all samples.
-
+We then normalize the score to represent **where it lies on the sample distribution**. i.e. 80% means the raw score is better than 80% of that of all samples.
 
 ### Visualization & Web Server
 
-The web server and visualization code are in the folder ( link here **[Todo @Ao]**). We use d3.js for visualization and flask for a simple web server. The current site supports comparison of up to 3 professors. The flow works like this 
+The web server and visualization code are in the folder ( link here **[Todo @Ao]**). We use **d3.js** for visualization and **flask** for setting up a simple web server. The current site supports a comparison of up to *3* professors. The flow works like this:
+
 - E.g. visit URL `http://127.0.0.1:5000/<prof_id>/<prof2_id>`
 - Scrape data from rate my professor site
 - Feed comments into the model
 - Calculate score (normalized)
 - Display Visualization
-
-
 
 **How to run**
 **[Todo @Ao]**
