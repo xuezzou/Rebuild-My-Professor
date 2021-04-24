@@ -8,6 +8,8 @@ For radar chart visualization, we first perform **topic modelling** to gain insi
 
 **[TODO @ Ao] Sample Image**
 
+**[Link to final presentation slides](https://docs.google.com/presentation/d/1wDA0UPp9di99CyNKslYld8N5JNcF7U2vHNoZgh-YVKo/edit?usp=sharing)**
+
 ## Dataset
 
 We wrote a [web scraper](https://github.com/quao627/RMP) that connects to the site's public API to obtain data for our training. Check out the [Jupyter notebook demo](https://github.com/quao627/RMP/blob/main/demo.ipynb) for a sample output. Also, check out a [simple analysis](https://github.com/quao627/RMP/blob/main/RMP_EDA.ipynb) on the sample data.

@@ -1,6 +1,7 @@
 # Radar Chart Visualization
 
 ## Methods
+
 Here's an illustration regarding how our process works.
 
 ![img](./workflow-sketch.png)
@@ -21,7 +22,7 @@ Here's an illustration regarding how our process works.
 5. **Web Visualization**:
    We set up a small python web server and display the final results using d3.js.
 
-#### Topic Modelling
+### Topic Modelling
 
 **[Collab notebook for topic modelling part](./Radar-Chart/topic-modelling-dim-reduction.ipynb)**
 
@@ -36,33 +37,45 @@ We decide on six categories (5 topics + other):
 
 1. (Others)
 2. Participation matters
-3. have extra credit
-4. engaging lecture
-5. helpful office hour
-6. heavy workload
+3. Have extra credit
+4. Engaging lecture
+5. Helpful office hour
+6. Heavy workload
 
-#### Multiclass Classification
+### Multiclass Classification
 
 - **[Collab notebook for using [CLS] token from bert](./Radar-Chart/bert-cls-token.ipynb)**
 - **[Collab notebook for bert + lstm](./Radar-Chart/bert-cls-token.ipynb)**
 
 After deciding the topics, we manually label those clusters to prepare data for training. We apply two different model architecture. The first model uses **Bert's pre-trained `[CLS]` token** with a linear layer, whereas our second model uses Bert's **pre-trained embedding on all words** and connect it to **LSTM** for training.
 
-**Metrics & Results**
+#### Sample Sentences
+
+1. "You should be fine as long as you go over the lectures!" - *Participation matters*
+2. "He also give big curves and extra credit at the end." - *Have extra credit*
+3. "Super interesting lectures and very friendly and hilarious!" - *Engaging Lecture*
+4. "He has very generous office hours and is willing to help you if you have any questions." - *Helpful office hour*
+5. "Expect lots of work - written quizzes twice a week, oral quiz once a week, and graded homework three times a week." - *Heavy workload*
+6. "Doesn't reply to emails." - *Other*
+7. "Also, he gives 5 pop-quizzes so beware." - *Other*
+8. "Run, don't walk." - *Other*
+
+#### Metrics & Results
+
 We evaluate both models using the training loss vs validation loss curve and class accuracy. The overall accuracy for both models is around 86%. Check out both notebook for more detailed information.
 
 #### Score Calculation & Nomalization
 
-[TODO Qu Ao]
+**[TODO Xue]**
 
 ### Visualization & Web Server
 
-The code for the web server and visualization are in the folder (TODO link here).
-How to run
+The code for the web server and visualization are in the folder ( link here **[Todo @Ao]**).
+
+**How to run**
+**[Todo @Ao]**
 
 ### Future work
 
 Training data argumentation
 lighter weight model
-
-
