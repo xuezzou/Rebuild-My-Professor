@@ -2,9 +2,11 @@
 
 Here is the repository for our course project at Vanderbilt: *CS 3891 Special Topics* (2020 Spring). We applied machine learning techniques in this project and worked on **rating tags prediction** and **rating visualization on radar chart** based on ratemyprofessors.com.
 
-For rating tags prediction, we employ multi-label classification techniques such as **[TODO]**.
+For rating tags prediction, we employ multi-label classification techniques such as **[TODO @Amy]**.
 
 For radar chart visualization, we first perform **topic modelling** to gain insight into the data and choose dimensions of the radar chart. Then we manually label data for each category and apply **BERT** embedding to train a m**ulti-class classification model**. Finally, we calculate the score based on normalization and display the visualization on a simple web server.
+
+**[TODO @ Ao] Sample Image**
 
 ## Dataset
 
@@ -92,75 +94,9 @@ We picked self-trained Word2Vec word embedding together with BiLSTM with CNN usi
 
 ## Project: Radar Chart
 
-### Methods
-
-Here's an illustration regarding how our process works.
-
-![img](./Radar-Chart/workflow-sketch.png)
-
-1. **Data Prep**:
-    See above Dataset Section.
-
-2. **Topic Modelling**:
-    We want to investigate what dimension we want our radar chart to reflect on. In other words, we want to know what classes we want for the model training process. We choose **clustering algorithms** to gain more insight into the structure of the data. We first apply **Bert embeddings** to the sentences and then apply the **UMAP** algorithm to reduce the dimensionality of the embeddings. Afterwards, we use **HDBSCAN** to perform clustering. We analyze the resulted clusters and summarize the topics.
-   - Failed Attempt: We also try popular topic modelling methods such as **LDA**, but it doesn't yield relevant results due to the significant similarities between the sentences of our task.
-
-3. **Multiclass Classification Model Development**:
-   After manually checking the clusters and choosing our topics, we manually label some data within the relevant clusters for training. To build the model, we apply **Bert embedding and a linear regression layer** for output. We also tried **Bert embedding with the LSTM model**.
-
-4. **Score Calculation**:
-   After model training, we apply normalization techniques and design a score calculation mechanism for later radar chart visualization.
-
-5. **Web Visualization**:
-   We set up a small python web server and display the final results using d3.js.
-
-#### Topic Modelling
-
-**[Collab notebook for topic modelling part](./Radar-Chart/topic-modelling-dim-reduction.ipynb)**
-
-For this part, we are asking what topic we can frequently find in these sentences. We use **pre-trained Bert embedding** as it has shown exceptional results in various NLP tasks. Besides, Bert is pre-trained using a large corpus of data, and we believe they have a more accurate representation of words and sentences.
-
-After applying the embeddings, each sentence becomes a 768-dimensional vector. However, most clustering algorithms work better on lower-dimensional data. Hence we use **UMAP** to reduce the dimensionality of the embeddings. Afterwards, we apply **HDBSCAN** for clustering, which stands for Hierarchical Density-Based Spatial Clustering of Applications with Noise.
-
-After obtaining the clusters, we use the *class-based TF-IDF* to extract some keywords from each cluster. We also manually check sentences to observe what topics appear frequently. Besides, we reduce the number of topics by merging the most similar topic vectors.
-
-**Topics**
-We decide on six categories (5 topics + other):
-
-1. (Others)
-2. Participation matters
-3. have extra credit
-4. engaging lecture
-5. helpful office hour
-6. heavy workload
-
-#### Multiclass Classification
-
-- **[Collab notebook for using [CLS] token from bert](./Radar-Chart/bert-cls-token.ipynb)**
-- **[Collab notebook for bert + lstm](./Radar-Chart/bert-cls-token.ipynb)**
-
-After deciding the topics, we manually label those clusters to prepare data for training. We apply two different model architecture. The first model uses **Bert's pre-trained `[CLS]` token** with a linear layer, whereas our second model uses Bert's **pre-trained embedding on all words** and connect it to **LSTM** for training.
-
-**Metrics & Results**
-We evaluate both models using the training loss vs validation loss curve and class accuracy. The overall accuracy for both models is around 86%. Check out both notebook for more detailed information.
-
-#### Score Calculation & Nomalization
-
-[TODO Qu Ao]
-
-### Visualization & Web Server
-
-The code for the web server and visualization are in the folder (TODO link here).
-How to run
-
-### Future work
-
-Training data argumentation
-lighter weight model
+Please refer [here 😊](./Radar-Chart) for detailed information.
 
 ## References
 
 [1] [Rate My Professors.](https://sites.google.com/view/ratemyprofessors-pc
 ) (2020). Google Sites.
-
-[Google Drive Folder](https://drive.google.com/drive/folders/15wGLUvjiGtFXMZ0XzpDYeSH1XEqWjUBB?usp=sharing)
