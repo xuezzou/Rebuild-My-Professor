@@ -96,7 +96,31 @@ We picked self-trained Word2Vec word embedding together with BiLSTM with CNN usi
 
 ## Project: Radar Chart
 
-Please refer [here 😊](./Radar-Chart) for detailed information.
+### Overview
+
+Here's an illustration regarding how our process works.
+
+![img](./Radar-Chart/workflow-sketch.png)
+
+1. **Data Prep**:
+    See above Dataset Section.
+
+2. **Topic Modelling**:
+    We want to investigate what dimension we want our radar chart to reflect on. In other words, we want to know what classes we want for the model training process. We choose **clustering algorithms** to gain more insight into the structure of the data. We first apply **Bert embeddings** to the sentences and then apply the **UMAP** algorithm to reduce the dimensionality of the embeddings. Afterwards, we use **HDBSCAN** to perform clustering. We analyze the resulted clusters and summarize the topics.
+   - Failed Attempt: We also try popular topic modelling methods such as **LDA**, but it doesn't yield relevant results due to a lack of semantics understanding of our task.
+
+   <img src="./Radar-Chart/LDA.png" alt="drawing" width="300"/>
+
+3. **Multiclass Classification Model Development**:
+   After manually checking the clusters and choosing our topics, we manually label some data within the relevant clusters for training. To build the model, we apply **Bert embedding and a linear regression layer** for output. We also tried **Bert embedding with the LSTM model**.
+
+4. **Score Calculation**:
+   After model training, we apply normalization techniques and design a score calculation mechanism for later radar chart visualization.
+
+5. **Web Visualization**:
+   We set up a small python web server and display the final results using d3.js.
+
+**Please refer [here 😊](./Radar-Chart) for detailed information on our methods.**
 
 ## References
 

@@ -1,34 +1,10 @@
 # Radar Chart Visualization
 
-## Overview
-
-Here's an illustration regarding how our process works.
-
-![img](./workflow-sketch.png)
-
-1. **Data Prep**:
-    See above Dataset Section.
-
-2. **Topic Modelling**:
-    We want to investigate what dimension we want our radar chart to reflect on. In other words, we want to know what classes we want for the model training process. We choose **clustering algorithms** to gain more insight into the structure of the data. We first apply **Bert embeddings** to the sentences and then apply the **UMAP** algorithm to reduce the dimensionality of the embeddings. Afterwards, we use **HDBSCAN** to perform clustering. We analyze the resulted clusters and summarize the topics.
-   - Failed Attempt: We also try popular topic modelling methods such as **LDA**, but it doesn't yield relevant results due to the significant similarities between the sentences of our task.
-
-   <img src="./LDA.png" alt="drawing" width="300"/>
-
-3. **Multiclass Classification Model Development**:
-   After manually checking the clusters and choosing our topics, we manually label some data within the relevant clusters for training. To build the model, we apply **Bert embedding and a linear regression layer** for output. We also tried **Bert embedding with the LSTM model**.
-
-4. **Score Calculation**:
-   After model training, we apply normalization techniques and design a score calculation mechanism for later radar chart visualization.
-
-5. **Web Visualization**:
-   We set up a small python web server and display the final results using d3.js.
-
 ## Methods
 
 ### Topic Modelling
 
-- **[Collab notebook for topic modelling part](./Radar-Chart/topic-modelling-dim-reduction.ipynb)**
+- **[Collab notebook for topic modelling part](https://colab.research.google.com/drive/1XBfQfPv4Nllqzh5EFEjKsI1mGoDnFEuE?usp=sharing)**
 
 For this part, we are asking what topic we can frequently find in these sentences. We use **pre-trained Bert embedding** as it has shown exceptional results in various NLP tasks. Besides, Bert is pre-trained using a large corpus of data, and we believe they have a more accurate representation of words and sentences.
 
@@ -48,8 +24,8 @@ We decide on six categories (5 topics + other):
 
 ### Multiclass Classification
 
-- **[Collab notebook for using [CLS] token from bert](./Radar-Chart/bert-cls-token.ipynb)**
-- **[Collab notebook for bert + lstm](./Radar-Chart/bert-cls-token.ipynb)**
+- **[Collab notebook for using [CLS] token from bert]([./Radar-Chart/bert-cls-token.ipynb](https://colab.research.google.com/drive/10X-eTIzW8amPBfFWo2xncjpAJy5Rurfm?usp=sharing))**
+- **[Collab notebook for bert + lstm](https://colab.research.google.com/drive/1FUQO27BVoDzwlFPbBrSkkDBQVzDHVF4p?usp=sharing)**
 
 After deciding the topics, we manually label those clusters to prepare data for training. We apply two different model architecture. The first model uses ** Bert's pre-trained `[CLS]` token** with a linear layer, whereas our second model uses Bert's **pre-trained embedding on all words** and connect it to **LSTM** for training.
 
@@ -74,7 +50,7 @@ We evaluate both models using the training loss vs validation loss curve and cla
 
 #### Score Calculation & Nomalization
 
-To normalize the score calculation process later in the web server, we first select a **random sample** of professors. We feed the comments, run the model, and obtain each professors' raw score by **averaging every sentence's softmax/probability output**. Here is the distribution of each category from our sample data:
+To normalize the score calculation process later in the web server, we first select a **random sample** of professors. We feed the comments, run the model, and obtain each professors' raw score by **averaging every sentence's softmax/probability output**. Here is the distribution of each category from our sample data: (Code for this part is under *Generalize the model & Score Normalization* section of the [bert+lstm notebook](https://colab.research.google.com/drive/1FUQO27BVoDzwlFPbBrSkkDBQVzDHVF4p?usp=sharing).)
 
 <img src="./distribution.jpg" alt="drawing" width="500"/>
 
