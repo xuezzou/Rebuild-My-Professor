@@ -8,6 +8,7 @@ Here is the repository for our course project at Vanderbilt: CS 3891 Special Top
 
 **Goal:**
 - Automate the process of assigning tags to reviews based on their content. Eg. Tough grader, Get ready to read, etc
+![img](Tags_available.png)
 
 **Motivation**
 - Among all the Vanderbilt ratings, for example, only 40% of them have tags. However, every professor’s main page contains a summary statistics on the top, which in this case could be biased. 
