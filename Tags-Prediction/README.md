@@ -15,7 +15,7 @@ Here is the repository for our course project at Vanderbilt: CS 3891 Special Top
 - Additionally, the model can help label reviews that were published before they had this feature.
 
 **Approach**
-- For rating tags prediction, we employ multi-label classification techniques such as simple logisitic regression, LSTM, and BiLSTM with CNN.
+- For rating tags prediction, we employ multi-label classification techniques such as simple logistic regression, LSTM, and BiLSTM with CNN.
 
 
 
@@ -54,7 +54,7 @@ To constructing a multi-label classification model we exxperienced with several 
 ### Base Model
 [Colab Notebook](https://github.com/xuezzou/Rebuild-My-Professor/blob/main/Tags-Prediction/BaseModel.ipynb)
 
-Our base model uses TFIDF together with Logisitic regression and reached an average validation accuracy of 0.7899 with an average f1-score of 0.3584.
+Our base model uses TFIDF together with Logistic regression and reached an average validation accuracy of 0.7899 with an average f1-score of 0.3584.
 
 
 ### Final Model
