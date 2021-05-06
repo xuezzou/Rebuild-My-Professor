@@ -2,7 +2,7 @@
 
 Here is the repository for our course project at Vanderbilt: *CS 3891 Special Topics* (2020 Spring). We applied machine learning techniques in this project and worked on **rating tags prediction** and **rating visualization on radar chart** based on ratemyprofessors.com.
 
-For rating tags prediction, we employ multi-label classification techniques such as **[TODO @Amy]**.
+For rating tags prediction, we first embed the sentences into input vectors and then predict their corresponding top 3 rating tags out of the 20 tags available on ratemyprofessors.com. We experimented using weighted logistic regression based on TFIDF embedding as our base model. And we use a **biLSTM** model with a self-trained **Word2Vec** embedding that gave us the best result as our final model.
 
 For radar chart visualization, we first perform **topic modelling** to gain insight into the data and choose dimensions of the radar chart. Then we manually label data for each category and apply **BERT** embedding to train a m**ulti-class classification model**. Finally, we calculate the score based on normalization and display the visualization on a simple web server.
 
